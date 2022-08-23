@@ -9,11 +9,25 @@ export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: center;
 `;
 
-export const Text = styled(Typography)`
+export const Icons = styled.img`
+	width: 25vw;
+	height: 25vw;
+`;
+
+export const City = styled(Typography)`
 	&.css-ahj2mt-MuiTypography-root {
 		font-size: 2rem;
+		margin: none;
+	}
+	`;
+
+export const Temp = styled(Typography)`
+	&.css-ahj2mt-MuiTypography-root {
+		font-size: 3rem;
+		margin: none;
+		
 	}
 `;
