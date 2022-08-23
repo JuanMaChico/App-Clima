@@ -1,16 +1,16 @@
 import styled from "styled-components";
 import Typography from "@mui/material/Typography";
 
-
 export const Root = styled.div`
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-around;
-	width: 60vw;
-	height: 20vh;
-    background-color: rgba(52, 74, 97, 0.2);
-	border-radius: 35px;
+	width: 80%;
+	height: 30%;
+	background-color: rgba(52, 74, 97, 0.2);
+	border-radius: 50px;
+	margin-bottom: 1%;
 `;
 
 export const Days = styled.div`
@@ -21,8 +21,8 @@ export const Days = styled.div`
 `;
 
 export const Icons = styled.img`
-	width: 7vw;
-	height: 7vw;
+	width: 7rem;
+	height: 7rem;
 `;
 
 export const Text = styled(Typography)`
@@ -30,12 +30,11 @@ export const Text = styled(Typography)`
 		font-size: 0.9rem;
 		margin: none;
 	}
-	`;
+`;
 
 export const Temp = styled(Typography)`
-&.css-ahj2mt-MuiTypography-root {
-	font-size: 0.9rem;
-	margin: none;
-	
-}
+	&.css-ahj2mt-MuiTypography-root {
+		font-size: 0.9rem;
+		margin: none;
+	}
 `;

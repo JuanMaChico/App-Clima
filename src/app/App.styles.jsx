@@ -5,8 +5,8 @@ export const Root = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	width: 98vw;
-	height: 98vh;
+	width: 100%;
+	height: 100%;
 	background: #108dc7; /* fallback for old browsers */
 	background: -webkit-linear-gradient(
 		to right,

@@ -11,7 +11,8 @@ function CurrentDay( props ) {
 		weather,
 	
 	} = props;
-	
+
+
 	return (
 		<Root>
 			<Icons src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png`} alt={weather.weather[0].description} />

@@ -1,15 +1,13 @@
 import styled from "styled-components";
-import WbSunnyIcon from "@mui/icons-material/WbSunny";
-import FmdGoodIcon from "@mui/icons-material/FmdGood";
 
 export const Root = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-around;
-	width: 70vw;
-	height: 70vh;
-	background-color: rgba(58, 95, 131, 0.4);
+	justify-content: center;
+	width: 90%;
+	height: 95%;
+	background-color: rgba(49, 80, 110, 0.4);
 	border-radius: 35px;
 `;
 
@@ -39,17 +37,4 @@ export const Temp = styled.h2`
 
 export const City = styled.h2`
 	margin: 10px;
-`;
-
-export const Sun = styled(WbSunnyIcon)`
-	margin: 30px;
-	&.css-tzssek-MuiSvgIcon-root {
-		font-size: 8rem;
-	}
-`;
-
-export const Place = styled(FmdGoodIcon)`
-	&.css-tzssek-MuiSvgIcon-root {
-		font-size: 1.3rem;
-	}
 `;

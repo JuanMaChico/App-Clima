@@ -13,8 +13,8 @@ export const Container = styled.div`
 `;
 
 export const Icons = styled.img`
-	width: 25vw;
-	height: 25vw;
+	width: 20rem;
+	height: 20rem;
 `;
 
 export const City = styled(Typography)`
@@ -22,12 +22,11 @@ export const City = styled(Typography)`
 		font-size: 2rem;
 		margin: none;
 	}
-	`;
+`;
 
 export const Temp = styled(Typography)`
 	&.css-ahj2mt-MuiTypography-root {
 		font-size: 3rem;
 		margin: none;
-		
 	}
 `;
