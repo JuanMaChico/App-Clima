@@ -20,6 +20,8 @@ function Card( props ) {
 		
 		weather,
 
+		changeCity,
+
 		options = ["Ubicacion actual", "Buenos aires", "Miami", "Rosario"]
 
 	
@@ -36,10 +38,11 @@ function Card( props ) {
 				value={ubicacion}
 				handleChange={(value) => {
 					setUbicacion(value);
+					changeCity(value);
 				}}
 			/>
 			<CurrentDay weather={weather} />
-			<CurrentWeek/>
+			<CurrentWeek coordenadas={weather.coord} />
 		</Root>
 	);
 }

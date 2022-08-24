@@ -1,0 +1,16 @@
+{
+	"status": "success",
+	"country": "Argentina",
+	"countryCode": "AR",
+	"region": "C",
+	"regionName": "Buenos Aires F.D.",
+	"city": "Buenos Aires",
+	"zip": "1871",
+	"lat": -34.6038,
+	"lon": -58.3817,
+	"timezone": "America/Argentina/Buenos_Aires",
+	"isp": "NSS S.A.",
+	"org": "",
+	"as": "AS16814 NSS S.A.",
+	"query": "190.210.247.53"
+}

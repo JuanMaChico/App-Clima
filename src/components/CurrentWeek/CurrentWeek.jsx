@@ -5,12 +5,22 @@ import React from "react";
 import { Root, Text, Days, Icons, Temp } from "./CurrentWeek.styles";
 import ServiceWeek from "../../utils/ServiceWeek.json";
 
-function CurrentWeek() {
-	const { list } = ServiceWeek;
+function CurrentWeek( props ) {
+
+	const {
+
+		coordenadas,
+
+	} = props;
+	
+	const  list  = false;
 
 	return (
 		<Root>
-			{list.map( (item, key) => {
+
+			{
+			list &&
+			list.map( (item, key) => {
 				return (
 					<Days key={key}>
 						<Icons
