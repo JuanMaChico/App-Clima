@@ -45,7 +45,7 @@ export const GetWeekClima = async ( lat, lon ) => {
 
 export const GetClima = async ( callback, city=null ) => {
     let dataCiudad = city;
-    if ( !dataCiudad ) {
+    if ( !dataCiudad || dataCiudad == "Ubicacion actual" ) {
         let response = await GetCity();
         dataCiudad = response.city;
     }
