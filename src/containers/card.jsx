@@ -42,7 +42,10 @@ function Card( props ) {
 				}}
 			/>
 			<CurrentDay weather={weather} />
-			<CurrentWeek coordenadas={weather.coord} />
+			{
+				weather &&
+				<CurrentWeek coordenadas={weather.coord} />
+			}
 		</Root>
 	);
 }

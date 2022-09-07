@@ -13,18 +13,16 @@ export const GetCity = async () => {
         return response.data;
 
     } catch (error) {
-
         throw {
             error,
             msg:"Fallo - GetCity"
         }
-        
     }
 } 
 
 /**
  * API Clima por ciudad del dia corriente
- * @param {String} CITY 
+ * @param {String} CITY Ciudad de la que se busca clima
  * @returns { JSON } https://openweathermap.org/current
  */
 export const GetData = async ( CITY ) => {
@@ -32,11 +30,15 @@ export const GetData = async ( CITY ) => {
     return response.data;
 }
 
-
+/**
+ * 
+ * @param {*} lat 
+ * @param {*} lon 
+ * @returns { JSON } https://openweathermap.org/forecast5
+ */
 export const GetWeekClima = async ( lat, lon ) => {
-    const response = await fetch(`api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&lang=es&appid=${API_KEY}`);
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&lang=es&appid=${API_KEY}`);
     const data = await response.json();
-    console.log(data)
     return data;
 }
 
@@ -47,7 +49,20 @@ export const GetClima = async ( callback, city=null ) => {
         let response = await GetCity();
         dataCiudad = response.city;
     }
-    console.log("Data ciudad get clima",dataCiudad);
+    // console.log("Data ciudad get clima",dataCiudad);
     const data = await GetData(dataCiudad);
     callback(data);
 }
+
+export const GetWeek = async ( callback, coordenadas ) => {
+    let coordenadasDate = coordenadas;
+    if ( !coordenadasDate ) {
+        let response = await GetWeekClima(coordenadas.lat, coordenadas.lon);
+        coordenadasDate = response;
+    }
+    // console.log("Clima de la semana::",coordenadasDate);
+    const data = await GetWeekClima(coordenadas.lat, coordenadas.lon);
+    callback(data);
+}
+
+
