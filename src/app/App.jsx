@@ -5,9 +5,16 @@ import React, { useState, useEffect } from "react";
 import { Root } from "./App.styled";
 import Card from "../containers/card";
 import { GetClima } from "../service/Service";
+import { useSelector, useDispatch } from "react-redux";
+import { updateWeather } from "../store/slices/index";
 
 function App() {
-	const [Clima, setclima] = useState(null);
+
+	// const [Clima, setclima] = useState(null);
+
+	const dispatch = useDispatch();
+
+	const Clima = useSelector(state => state.weather)
 
 	useEffect(() => {
 		try {
@@ -19,16 +26,18 @@ function App() {
 
 	const handlerWeather = (city = null) => {
 		GetClima(function (data) {
-			setclima(data);
+			// setclima(data);
 			//hacer Dispatch de data;
+			dispatch(updateWeather(data));
+
 		}, city);
 	};
 
-	// console.log("Clima del dia =", Clima);
+	console.log("Clima del dia =", Clima.weather);
 
 	return (
 		<Root>
-			{Clima && <Card weather={Clima} changeCity={(city) => handlerWeather(city)} />}
+			{Clima.weather && <Card weather={Clima.weather} changeCity={(city) => handlerWeather(city)} />}
 		</Root>
 	);
 }

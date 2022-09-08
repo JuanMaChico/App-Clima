@@ -2,6 +2,7 @@
 import { API_KEY } from "../utils/constants";
 import * as Request from "../utils/requests";
 
+
 /**
  * API Ubicacion por Ip
  * @returns { JSON }  https://ip-api.com/docs
