@@ -24,7 +24,6 @@ function CurrentWeek(props) {
 	const handlerWeatherWeek = (coordenadas = null) => {
 		GetWeek(function (data) {
 			SetWeatherWeek(listFormater(data));
-			//hacer Dispatch de data;
 		}, coordenadas);
 	};
 
@@ -38,9 +37,6 @@ function CurrentWeek(props) {
 	   })
 	   return climaPorDia;
 	}
-
-
-	// console.log("Data Week::", weatherWeek);
 
 	return (
 		<Root>

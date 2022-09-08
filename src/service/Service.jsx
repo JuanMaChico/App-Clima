@@ -61,7 +61,6 @@ export const GetWeek = async ( callback, coordenadas ) => {
         let response = await GetWeekClima(coordenadas.lat, coordenadas.lon);
         coordenadasDate = response;
     }
-    // console.log("Clima de la semana::",coordenadasDate);
     const data = await GetWeekClima(coordenadas.lat, coordenadas.lon);
     callback(data);
 }

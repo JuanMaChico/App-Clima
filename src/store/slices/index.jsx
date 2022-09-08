@@ -7,7 +7,6 @@ export const weatherSlice = createSlice({
     },
     reducers:{
         updateWeather: ( state, action ) => {
-            //actualizar el clima...
             state.weather = {
                 ...state.weather,
                 ...action.payload
