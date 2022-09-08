@@ -47,7 +47,6 @@ function CurrentWeek(props) {
 			{list &&
 				list.map((item, key) => {
 					let fecha = new Date(item.dt_txt.substring(0,10)).toDateString();
-					console.log(fecha);
 					return (
 						<Days key={key}>
 							<Icons
