@@ -6,7 +6,7 @@ import React, { useState } from "react";
 /**
  * @Desc Estilos
  */
-import { Selected, ItemsMenu } from "./Select.styles";
+import { Selected, ItemsMenu } from "./Select.styled";
 
 function Select(props) {
 	const [open, setOpen] = useState(false);

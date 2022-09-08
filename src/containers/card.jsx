@@ -5,7 +5,7 @@ import React, { useState } from "react";
 /**
  * Componentes
  */
-import { Root } from "./card.styles";
+import { Root } from "./card.styled";
 import CurrentDay from "../components/CurrentDay/CurrentDay";
 import CurrentWeek from "../components/CurrentWeek/CurrentWeek";
 import Select from "../components/Select/Select";
@@ -41,7 +41,7 @@ function Card( props ) {
 					changeCity(value);
 				}}
 			/>
-			<CurrentDay weather={weather} />
+			<CurrentDay className="row" weather={weather} />
 			{
 				weather &&
 				<CurrentWeek coordenadas={weather.coord} />

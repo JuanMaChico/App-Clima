@@ -2,7 +2,7 @@
  * Dependencias
  */
 import React, { useEffect, useState } from "react";
-import { Root, Text, Days, Icons, Temp } from "./CurrentWeek.styles";
+import { Root, Text, Days, Icons, Temp } from "./CurrentWeek.styled";
 import { GetWeek } from "../../service/Service";
 
 function CurrentWeek(props) {
@@ -39,12 +39,15 @@ function CurrentWeek(props) {
 	   return climaPorDia;
 	}
 
+
 	// console.log("Data Week::", weatherWeek);
 
 	return (
 		<Root>
 			{list &&
 				list.map((item, key) => {
+					let fecha = new Date(item.dt_txt.substring(0,10)).toDateString();
+					console.log(fecha);
 					return (
 						<Days key={key}>
 							<Icons
@@ -53,8 +56,8 @@ function CurrentWeek(props) {
 							/>
 							<Temp>{item.main.temp}°C</Temp>
 							<Text>{item.weather[0].description}</Text>
-							<Text>{item.dt_txt.substring(0,10)}</Text>
-							<Text>{item.main.humidity}%</Text>
+							<Text>{fecha}</Text>
+							<Text>{item.main.humidity}% humidity</Text>
 						</Days>
 					);
 				})}

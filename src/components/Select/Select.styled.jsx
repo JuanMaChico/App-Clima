@@ -15,16 +15,12 @@
   */
  export const Selected = styled(TextField)`
      & .MuiGrid-root {
-         aling-items: center;
          justify-content: center;
-         content-align: center;
      }
      &.MuiFormControl-root {
          width: 30vw;
          margin-bottom: 20px;
-         aling-items: center;
          justify-content: center;
-         content-align: center;
      }& .MuiFormHelperText-root{
          color: #000000;
      }
