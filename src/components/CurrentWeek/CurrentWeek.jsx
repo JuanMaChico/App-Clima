@@ -12,26 +12,29 @@ function CurrentWeek(props) {
 	const [ weatherWeek, SetWeatherWeek ] = useState();
 
 	const list = weatherWeek;
-
+	
+	const handlerWeatherWeek = (coordenadas = null) => {
+		GetWeek(function (data) {
+			SetWeatherWeek(listFormater(data));
+		}, coordenadas);
+	};
+	
 	useEffect(() => {
 		try {
 			handlerWeatherWeek(coordenadas);
 		} catch (error) {
 			console.log(error);
 		}
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [coordenadas]);
 
-	const handlerWeatherWeek = (coordenadas = null) => {
-		GetWeek(function (data) {
-			SetWeatherWeek(listFormater(data));
-		}, coordenadas);
-	};
 
 	const listFormater = ( list ) => {
 		let horaActual = new Date(list.list[0].dt_txt).getHours() 
+		// eslint-disable-next-line array-callback-return
 		let climaPorDia = list.list.filter(weatherPorHora => {
 		   let horaActualPorDia = new Date(weatherPorHora.dt_txt).getHours()
-		   if( horaActualPorDia == horaActual) {
+		   if( horaActualPorDia === horaActual) {
 			   return weatherPorHora
 		   }
 	   })

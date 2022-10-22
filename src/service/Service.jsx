@@ -14,6 +14,7 @@ export const GetCity = async () => {
         return response.data;
 
     } catch (error) {
+        // eslint-disable-next-line no-throw-literal
         throw {
             error,
             msg:"Fallo - GetCity"
@@ -46,7 +47,7 @@ export const GetWeekClima = async ( lat, lon ) => {
 
 export const GetClima = async ( callback, city=null ) => {
     let dataCiudad = city;
-    if ( !dataCiudad || dataCiudad == "Ubicacion actual" ) {
+    if ( !dataCiudad || dataCiudad === "Ubicacion actual" ) {
         let response = await GetCity();
         dataCiudad = response.city;
     }
