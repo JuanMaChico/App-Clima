@@ -1,9 +1,8 @@
-import styled from "styled-components";
-import Typography from "@mui/material/Typography";
+import styled from 'styled-components';
+import Typography from '@mui/material/Typography';
 
 export const Root = styled.div`
 	border-radius: 20px;
-
 	width: 50%;
 	display: flex;
 	align-items: center;

@@ -1,45 +1,43 @@
 /**
  * Dependencias
  */
-import React, { useEffect, useState } from "react";
-import { Root, Text, Days, Icons, Temp } from "./CurrentWeek.styled";
-import { GetWeek } from "../../service/Service";
+import React, { useEffect, useState } from 'react';
+import { Root, Text, Days, Icons, Temp } from './CurrentWeek.styled';
+import { GetWeek } from '../../service/Service';
 
 function CurrentWeek(props) {
-
 	const { coordenadas } = props;
 
-	const [ weatherWeek, SetWeatherWeek ] = useState();
+	const [weatherWeek, SetWeatherWeek] = useState();
 
 	const list = weatherWeek;
-	
+
 	const handlerWeatherWeek = (coordenadas = null) => {
 		GetWeek(function (data) {
 			SetWeatherWeek(listFormater(data));
 		}, coordenadas);
 	};
-	
+
 	useEffect(() => {
 		try {
 			handlerWeatherWeek(coordenadas);
 		} catch (error) {
 			console.log(error);
 		}
-	// eslint-disable-next-line react-hooks/exhaustive-deps
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [coordenadas]);
 
-
-	const listFormater = ( list ) => {
-		let horaActual = new Date(list.list[0].dt_txt).getHours() 
+	const listFormater = (list) => {
+		let horaActual = new Date(list.list[0].dt_txt).getHours();
 		// eslint-disable-next-line array-callback-return
-		let climaPorDia = list.list.filter(weatherPorHora => {
-		   let horaActualPorDia = new Date(weatherPorHora.dt_txt).getHours()
-		   if( horaActualPorDia === horaActual) {
-			   return weatherPorHora
-		   }
-	   })
-	   return climaPorDia;
-	}
+		let climaPorDia = list.list.filter((weatherPorHora) => {
+			let horaActualPorDia = new Date(weatherPorHora.dt_txt).getHours();
+			if (horaActualPorDia === horaActual) {
+				return weatherPorHora;
+			}
+		});
+		return climaPorDia;
+	};
 
 	return (
 		<Root>

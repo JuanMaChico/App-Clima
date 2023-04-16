@@ -1,12 +1,10 @@
-import styled from "styled-components";
-import Typography from "@mui/material/Typography";
+import styled from 'styled-components';
+import Typography from '@mui/material/Typography';
 
 export const Root = styled.div`
 	border-radius: 70px;
-
 	width: 100%;
 	min-width: 820px;
-
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
@@ -19,7 +17,6 @@ export const Days = styled.div`
 	justify-content: center;
 	align-items: center;
 	align-content: center;
-
 	margin: 20px;
 `;
 
@@ -27,7 +24,7 @@ export const Icons = styled.img``;
 
 export const Text = styled(Typography)`
 	&.MuiTypography-root {
-        font-style: italic;
+		font-style: italic;
 	}
 `;
 

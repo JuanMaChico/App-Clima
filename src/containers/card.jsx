@@ -1,37 +1,31 @@
 /**
  * Dependencias
  */
-import React, { useState } from "react";
+import React, { useState } from 'react';
 /**
  * Componentes
  */
-import { Root } from "./card.styled";
-import CurrentDay from "../components/CurrentDay/CurrentDay";
-import CurrentWeek from "../components/CurrentWeek/CurrentWeek";
-import Select from "../components/Select/Select";
+import { Root } from './card.styled';
+import CurrentDay from '../components/CurrentDay/CurrentDay';
+import CurrentWeek from '../components/CurrentWeek/CurrentWeek';
+import Select from '../components/Select/Select';
 
 /**
  * Tarjeta principal de la vista
  * @returns {Card}
  */
-function Card( props ) {
-	
-	const { 
-		
+function Card(props) {
+	const {
 		weather,
-
 		changeCity,
-
-		options = ["Ubicacion actual", "Buenos aires", "Miami", "Rosario"]
-
-	
+		options = ['Ubicación actual', 'Buenos aires', 'Miami', 'Rosario'],
 	} = props;
 
-	const [ ubicacion, setUbicacion ] = useState(options[0]);
+	const [ubicacion, setUbicacion] = useState(options[0]);
 
 	return (
 		<Root>
-			<Select 
+			<Select
 				options={options}
 				variant="outlined"
 				label="Clima de"
@@ -42,10 +36,7 @@ function Card( props ) {
 				}}
 			/>
 			<CurrentDay className="row" weather={weather} />
-			{
-				weather &&
-				<CurrentWeek coordenadas={weather.coord} />
-			}
+			{weather && <CurrentWeek coordenadas={weather.coord} />}
 		</Root>
 	);
 }

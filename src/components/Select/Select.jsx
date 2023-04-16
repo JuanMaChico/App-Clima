@@ -1,29 +1,23 @@
 /**
  * @Desc Depedencias
  */
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 /**
  * @Desc Estilos
  */
-import { Selected, ItemsMenu } from "./Select.styled";
+import { Selected, ItemsMenu } from './Select.styled';
 
 function Select(props) {
 	const [open, setOpen] = useState(false);
 
 	const {
-		value = "",
-
-		label = "",
-
-		helperText = "Seleccione Ciudad",
-
+		value = '',
+		label = '',
+		helperText = 'Seleccione Ciudad',
 		handleChange = () => {},
-
 		options = [],
-
 		error = false,
-
 		readOnly,
 	} = props;
 
