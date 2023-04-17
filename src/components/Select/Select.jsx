@@ -1,5 +1,5 @@
 /**
- * @Desc Depedencias
+ * @Desc Dependencias
  */
 import React, { useState } from 'react';
 
