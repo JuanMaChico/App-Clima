@@ -8,7 +8,7 @@ import * as Request from '../utils/requests';
  */
 export const GetCity = async () => {
 	try {
-		const response = await Request.get('https://ip-api.com/json/?fields=61439');
+		const response = await Request.get('http://ip-api.com/json/?fields=61439');
 		return response.data;
 	} catch (error) {
 		// eslint-disable-next-line no-throw-literal
