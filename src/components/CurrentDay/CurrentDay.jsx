@@ -12,7 +12,7 @@ function CurrentDay(props) {
 	return (
 		<Root>
 			<Icons
-				src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png`}
+				src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png`}
 				alt={weather.weather[0].description}
 			/>
 			<Container>
